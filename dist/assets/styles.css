@@ -142,6 +142,9 @@ html[data-theme="dark"] .art-browser, html[data-theme="dark"] .preview-card { bo
 }
 
 /* Projects directory */
+.project-art > .art-browser, .portfolio-art > .art-browser { display: none; }
+.project-screenshot, .portfolio-image { display: block; width: 100%; height: 244px; object-fit: cover; object-position: top center; border-radius: 9px; background: #eef3f6; }
+.project-screenshot { height: 235px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .projects-page .site-header { padding-bottom: 28px; }
 .projects-page .desktop-nav > a:first-child::after { display: none; }
@@ -245,6 +248,8 @@ html[data-theme="dark"] .art-browser, html[data-theme="dark"] .preview-card { bo
   .project-search { flex-basis: 100%; max-width: none; }
   .project-count { align-self: center; }
   .portfolio-grid { grid-template-columns: 1fr; gap: 17px; }
+  .portfolio-image { height: 205px; }
+  .project-screenshot { height: 190px; }
   .portfolio-art .art-photo, .portfolio-art .system-preview { min-height: 205px; }
   .portfolio-art .art-photo-copy { font-size: 24px; }
   .portfolio-art .art-elephant { width: 83px; height: 81px; font-size: 36px; }
