@@ -192,6 +192,21 @@ html[data-theme="dark"] .art-browser, html[data-theme="dark"] .preview-card { bo
 .portfolio-art .metric-row span { padding: 9px; }
 .portfolio-art .metric-row b { font-size: 17px; }
 .portfolio-art .metric-row small { font-size: 7px; }
+.school-browser { background: #eef1ee; }
+.school-top { background: rgba(255, 255, 255, .9); color: #243047; }
+.school-top .art-logo { position: relative; display: inline-flex; align-items: center; gap: 6px; padding-left: 23px; color: #243047; }
+.school-top .art-logo small { color: #8b929b; }
+.school-cross { position: absolute; left: 0; color: #efbf16; font-size: 21px; line-height: 1; }
+.school-switch { padding: 5px 7px; border: 1px solid #d8dee5; border-radius: 8px; background: #fff; color: #59616c; font-size: 8px; }
+.school-preview { position: relative; display: flex; min-height: 244px; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: 28px 24px; background: linear-gradient(125deg, rgba(8, 39, 67, .82), rgba(13, 104, 95, .52) 48%, rgba(237, 218, 174, .74)), linear-gradient(135deg, #809d92, #e3c99b 55%, #77969a); color: #fff; text-align: center; }
+.school-preview::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 18% 42%, rgba(247, 226, 183, .46) 0 12%, transparent 13%), linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, .18) 21% 23%, transparent 24% 45%, rgba(10, 36, 55, .16) 46% 49%, transparent 50%); opacity: .8; }
+.school-badge, .school-kicker, .school-preview strong, .school-preview > b, .school-cta { position: relative; z-index: 1; }
+.school-badge { display: grid; place-items: center; width: 61px; height: 61px; margin-bottom: 12px; border-radius: 50% 50% 46% 46%; background: #e21c19; color: #111; font-size: 16px; font-weight: 900; box-shadow: 0 5px 0 #68a71c; }
+.school-badge span { display: block; font-size: 10px; letter-spacing: 6px; }
+.school-kicker { margin-bottom: 7px; font-size: 9px; font-weight: 800; letter-spacing: .22em; }
+.school-preview strong { font-size: clamp(2.35rem, 4vw, 3.8rem); letter-spacing: -.06em; line-height: .95; }
+.school-preview > b { margin-top: 7px; font-size: clamp(1.2rem, 2vw, 1.8rem); color: #f1e9da; }
+.school-cta { margin-top: 20px; padding: 9px 16px; border-radius: 999px; background: #d51d22; font-size: 10px; font-weight: 800; }
 .portfolio-info { padding: 16px 20px 14px; }
 .portfolio-title { display: flex; align-items: center; gap: 13px; }
 .portfolio-title h2 { margin: 0; font-size: 18px; line-height: 1.2; letter-spacing: -.035em; }
@@ -233,6 +248,8 @@ html[data-theme="dark"] .art-browser, html[data-theme="dark"] .preview-card { bo
   .portfolio-art .art-photo, .portfolio-art .system-preview { min-height: 205px; }
   .portfolio-art .art-photo-copy { font-size: 24px; }
   .portfolio-art .art-elephant { width: 83px; height: 81px; font-size: 36px; }
+  .school-preview { min-height: 205px; padding: 20px 15px; }
+  .school-preview strong { font-size: 2.45rem; }
   .portfolio-art .preview-content { padding: 18px 14px; }
   .portfolio-info { padding: 15px 17px 13px; }
   .portfolio-actions { padding: 0 17px; }
