@@ -1,42 +1,66 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Contact Kai10 about a website, system interface, or digital product." />
-    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" /><link rel="stylesheet" href="assets/styles.css" />
-    <title>Contact — Kai10</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102a4c" />
+    <meta name="description" content="Start a conversation with Kai10 about a website, system interface, or digital product." />
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <title>Contact Kai10</title>
   </head>
   <body data-page="contact">
-    <div class="site-shell">
+    <div class="site-shell contact-site">
       <header class="site-header">
         <a class="brand" href="index.html" aria-label="Kai10 home"><img src="assets/mark.svg" alt="" width="48" height="48" /><span>Kai10</span></a>
-        <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html#home">Home</a><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="contact.html" aria-current="page">Contact</a><a class="button button-dark button-small" href="contact.html">Let's Talk</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">◐</span></button></nav>
-        <div class="mobile-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">◐</span></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
-        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden><a href="index.html#home">Home</a><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="contact.html">Contact</a><a class="button button-dark" href="contact.html">Let's Talk</a></nav>
+        <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a class="nav-active" href="contact.html" aria-current="page">Contact</a><a class="button button-dark button-small" href="contact.html">Let's Talk <span aria-hidden="true">&#8594;</span></a></nav>
+        <div class="mobile-actions"><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="button button-dark" href="contact.html">Let's Talk</a></nav>
       </header>
-      <main class="contact-page">
-        <p class="eyebrow reveal">Start a conversation</p>
-        <h1 class="reveal">Have an idea? Let’s bring it to life<span>.</span></h1>
-        <p class="hero-lede reveal delay-1">Tell me what you’re working on, where you are in the process, and what a useful next step looks like for you.</p>
-        <div class="contact-layout">
-          <aside class="contact-details reveal">
-            <h2>A clear first message is enough.</h2>
-            <p>You don’t need a complete brief. A few sentences about the idea, the people it serves, and the problem you want to solve will give us a useful starting point.</p>
-            <div class="detail-note">Kai10’s confirmed direct contact details can be added here once supplied. For now, the form is the primary contact path.</div>
+
+      <main class="contact-page contact-reference">
+        <section class="contact-hero" aria-labelledby="contact-title">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav>
+          <div class="contact-hero-grid">
+            <div class="contact-hero-copy"><p class="eyebrow">Let's connect</p><h1 id="contact-title">Let's bring your<br /><span>idea</span> to life<span>.</span></h1><p>Have a project in mind, a question, or an opportunity to collaborate? I'd love to hear from you.</p></div>
+            <div class="contact-orbit" aria-hidden="true"><span></span><i></i><b></b></div>
+          </div>
+        </section>
+
+        <section class="contact-start" aria-labelledby="start-title">
+          <aside class="contact-services">
+            <p class="eyebrow">Start a conversation</p><h2 id="start-title">Tell me what you want to build.</h2><p>Tell me what you want to build, who it is for, and what matters most to you.</p>
+            <div class="service-list">
+              <article class="contact-service"><div class="contact-icon">&#9633;</div><div><h3>Website projects</h3><p>Travel, sports, property, and business websites.</p></div></article>
+              <article class="contact-service"><div class="contact-icon">&#9776;</div><div><h3>System interfaces</h3><p>Dashboards, portals, and tools for everyday work.</p></div></article>
+              <article class="contact-service"><div class="contact-icon">&#9786;</div><div><h3>Collaboration</h3><p>Share an idea or discuss a project together.</p></div></article>
+            </div>
+            <div class="contact-tip"><div class="contact-tip-icon">&#9678;</div><div><h3>Not sure where to start?</h3><p>A short description is enough. We can explore the details together.</p><a href="projects.html">Explore my projects <span aria-hidden="true">&#8594;</span></a></div></div>
           </aside>
-          <form class="contact-form reveal delay-1" data-contact-form action="/api/contact" method="post" novalidate>
+
+          <form class="contact-form contact-form-reference" data-contact-form action="/api/contact" method="post" novalidate>
+            <h2>Tell me about your project</h2>
             <div class="form-grid">
-              <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required /><small data-error="name"></small></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /><small data-error="email"></small></div>
-              <div class="field field-full"><label for="projectType">Project Type</label><select id="projectType" name="projectType" required><option value="">Choose one</option><option value="Web design">Web design</option><option value="Web development">Web development</option><option value="System interface">System interface</option><option value="Not sure yet">Not sure yet</option></select><small data-error="projectType"></small></div>
-              <div class="field field-full"><label for="message">Message</label><textarea id="message" name="message" placeholder="What are you hoping to build?" required></textarea><small data-error="message"></small></div>
+              <div class="field"><label for="name">Full name <span>*</span></label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required /><small data-error="name"></small></div>
+              <div class="field"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /><small data-error="email"></small></div>
+              <div class="field field-full"><label for="projectType">What do you need help with? <span>*</span></label><select id="projectType" name="projectType" required><option value="">Select a service</option><option value="Web design">Website project</option><option value="Web development">Web development</option><option value="System interface">System interface</option><option value="Not sure yet">Not sure yet</option></select><small data-error="projectType"></small></div>
+              <div class="field"><label for="budget">Estimated budget <em>(optional)</em></label><select id="budget" name="budget"><option value="">Select a range</option><option value="Under $1,000">Under $1,000</option><option value="$1,000-$5,000">$1,000-$5,000</option><option value="$5,000+">$5,000+</option></select></div>
+              <div class="field"><label for="timeline">Preferred timeline <em>(optional)</em></label><select id="timeline" name="timeline"><option value="">Select a timeline</option><option value="As soon as possible">As soon as possible</option><option value="This month">This month</option><option value="This quarter">This quarter</option><option value="Exploring">Just exploring</option></select></div>
+              <div class="field field-full"><label for="message">Your message <span>*</span></label><textarea id="message" name="message" placeholder="Describe your idea, goals, and any important details..." required></textarea><small data-error="message"></small></div>
             </div>
             <div class="hp-field" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off" /></div>
-            <div class="form-actions"><button class="button button-dark" type="submit">Send message</button><span class="form-status" data-form-status aria-live="polite"></span></div>
+            <p class="required-note">* Required fields</p>
+            <div class="form-actions"><button class="button button-dark" type="submit">Send Message <span aria-hidden="true">&#8594;</span></button></div>
+            <p class="form-status" data-form-status aria-live="polite"></p><p class="privacy-note"><span aria-hidden="true">&#128274;</span> Your details will only be used to respond to your enquiry.</p>
           </form>
-        </div>
+        </section>
+
+        <section class="contact-next" aria-labelledby="next-title"><h2 id="next-title">What happens next?</h2><div class="next-grid"><article class="next-step"><span>01</span><div><h3>Share your idea</h3><p>Tell me about your project, your goals, and what you'd like to achieve.</p></div><b aria-hidden="true">&#8594;</b></article><article class="next-step"><span>02</span><div><h3>Discuss the details</h3><p>We'll explore the requirements, options, and the best approach for your needs.</p></div><b aria-hidden="true">&#8594;</b></article><article class="next-step"><span>03</span><div><h3>Agree on next steps</h3><p>We'll align on the plan and move forward when you're ready.</p></div></article></div></section>
+
+        <section class="contact-band contact-final"><div class="contact-copy"><p class="eyebrow">Good projects start with a conversation.</p><h2>Have an idea? Let's bring it to life<span>.</span></h2><p>Whether it's a new website, a custom system, or a digital product, I'd love to hear about your project.</p></div><a class="button button-aqua" href="contact.html">Let's Talk <span aria-hidden="true">&#8594;</span></a></section>
       </main>
-      <footer class="site-footer"><a class="brand" href="index.html" aria-label="Kai10 home"><img src="assets/mark.svg" alt="" width="40" height="40" /><span>Kai10</span></a><nav aria-label="Footer navigation"><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="contact.html">Contact</a></nav><span class="footer-meta">© <span data-year></span> Kai10</span></footer>
+
+      <footer class="site-footer"><a class="brand" href="index.html" aria-label="Kai10 home"><img src="assets/mark.svg" alt="" width="40" height="40" /><span>Kai10</span></a><nav aria-label="Footer navigation"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><span class="footer-meta">&copy; <span data-year></span> Kai10</span></footer>
     </div>
     <script src="assets/app.js" defer></script>
   </body>
