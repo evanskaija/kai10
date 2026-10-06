@@ -168,6 +168,42 @@ function initContactForm() {
   Object.values(fields).forEach((field) => { if (field && field !== fields.company) field.addEventListener("blur", validate); });
 }
 
+function initProjectDirectory() {
+  const cards = $$('[data-project-card]');
+  const filters = $$('[data-project-filter]');
+  const search = $('[data-project-search]');
+  const count = $('[data-project-count]');
+  const empty = $('[data-project-empty]');
+  if (!cards.length || !filters.length || !count) return;
+
+  let activeFilter = "all";
+  const update = () => {
+    const query = search ? search.value.trim().toLowerCase() : "";
+    let visible = 0;
+    cards.forEach((card) => {
+      const matchesFilter = activeFilter === "all" || card.dataset.category === activeFilter;
+      const matchesSearch = !query || (card.dataset.search || "").includes(query);
+      const shouldShow = matchesFilter && matchesSearch;
+      card.hidden = !shouldShow;
+      if (shouldShow) visible += 1;
+    });
+    count.textContent = `${visible} ${visible === 1 ? "project" : "projects"}`;
+    if (empty) empty.hidden = visible !== 0;
+  };
+
+  filters.forEach((filter) => filter.addEventListener("click", () => {
+    activeFilter = filter.dataset.projectFilter || "all";
+    filters.forEach((item) => {
+      const selected = item === filter;
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
+    update();
+  }));
+  if (search) search.addEventListener("input", update);
+  update();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initMenu();
@@ -175,5 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   populateProjectPage();
   initContactForm();
+  initProjectDirectory();
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 });
