@@ -72,27 +72,32 @@ const caseStudyData = {
   "century-expeditions": {
     title: "Century Expeditions",
     category: "Travel website",
-    intro: "A destination-led travel experience for discovering Tanzania, choosing a direction, and taking the next step with confidence.",
-    overview: "Century Expeditions gives Tanzania's destinations, safari ideas, and planning path one calm, visual home. The experience is designed to inspire first, then make an enquiry feel simple.",
-    aim: "Turn travel inspiration into a clear safari-planning enquiry.",
+    intro: "A travel website concept for Tanzania, bringing destinations, safari experiences, and planning next steps into one calm journey.",
+    overview: "Century Expeditions is a travel website concept for Tanzania, designed to help visitors move from discovering a destination to choosing an experience and making an enquiry. It gives the visual story, practical direction, and next action room to work together.",
+    aim: "Help travelers move from inspiration to a realistic trip enquiry without losing the feeling of discovery.",
     targetUsers: "Travelers, couples, families, and safari planners",
-    problem: "Trip planning can feel scattered across destinations, safari ideas, and enquiry steps. Visitors need an inviting place to start without being overwhelmed by options.",
-    contribution: "I shaped the visual direction, responsive page structure, content hierarchy, and front-end experience for browsing destinations and moving toward an enquiry.",
-    status: "Live project",
+    problem: "Travel information is often spread across destination pages, safari ideas, and enquiry channels. Visitors need enough context to choose a direction without having to assemble the whole journey themselves.",
+    contribution: "My work focused on the landing-page direction, destination storytelling, safari discovery structure, and responsive layouts that keep the first enquiry step clear.",
+    status: "Implemented interface / public preview",
+    statusDetail: {
+      designed: "Destination hierarchy, editorial storytelling, experience discovery, and responsive planning flows.",
+      implemented: "Public interface preview with a visual landing page, destination direction, and clear trip-planning calls to action.",
+      planned: "Content management, enquiry handling, availability data, and booking integrations."
+    },
     type: "travel",
     liveUrl: "https://century-expeditions.vercel.app/",
     image: "../assets/project-century.png",
     imageAlt: "Century Expeditions website showing a Tanzania travel landing page",
     screenshotCaption: "A visual entry point for discovering Tanzania and planning a journey.",
     features: [
-      ["Destination storytelling", "A spacious, editorial layout gives each place room to create interest."],
-      ["Experience-led discovery", "Safari, culture, beaches, and journeys are organised around how people choose to travel."],
-      ["Planning next steps", "Clear calls to action help visitors move from inspiration to an enquiry."],
-      ["Responsive travel browsing", "The experience stays useful when plans are being made from a phone."],
-      ["Journey confidence", "Helpful content keeps the next decision visible without adding pressure."],
-      ["Enquiry-ready structure", "The page leaves visitors with a clear route to ask for a tailored trip."]
+      ["Destination discovery", "Help travelers browse Tanzania's regions and choose a direction for the journey."],
+      ["Safari experiences", "Present safari ideas with enough context to compare the feeling and focus of each option."],
+      ["Visual storytelling", "Use place-led imagery and editorial rhythm to make the destination feel tangible."],
+      ["Trip-planning CTA", "Keep the route from inspiration to a tailored enquiry visible and easy to follow."],
+      ["Responsive browsing", "Keep destinations, experience details, and next actions usable across screen sizes."],
+      ["Enquiry path", "Give visitors a clear way to ask for help shaping the right trip."]
     ],
-    stack: "HTML, CSS, JavaScript, responsive web UI, content-led layout",
+    stack: "HTML, CSS, JavaScript, responsive layouts, content structure, image-led interface design",
     lessons: "Strong visual hierarchy can make a rich destination catalogue feel easy to explore. The key was keeping the first action obvious while letting the imagery carry the emotion.",
     walkthrough: "Static preview of the shipped landing experience. A recorded demo can be added when one is available.",
     demoUrl: "",
@@ -101,25 +106,30 @@ const caseStudyData = {
   "tanzania-soccer-hub": {
     title: "Tanzania Soccer Hub",
     category: "Football platform",
-    intro: "A focused home for match-day information, league context, club stories, and the wider rhythm of Tanzanian football.",
-    overview: "Tanzania Soccer Hub brings football information into one place so fans can scan what is happening now and then explore the teams, competitions, and stories behind it.",
-    aim: "Make Tanzanian football easier to follow in one focused experience.",
+    intro: "A football information platform concept for Tanzania, bringing match-day updates, competitions, teams, and stories into one focused experience.",
+    overview: "Tanzania Soccer Hub is a football information platform concept for Tanzania. It brings the match-day view, league context, club discovery, and editorial stories into one place so fans can quickly orient themselves and then explore further.",
+    aim: "Help fans move from a headline or fixture to the match, team, or competition context they want to follow.",
     targetUsers: "Fans, clubs, journalists, and match-day readers",
-    problem: "Fixtures, results, club context, and football stories are often spread across separate places. Readers need a fast way to orient themselves before choosing what to read next.",
-    contribution: "I shaped the product direction, information architecture, responsive layouts, and match-day interface patterns for quick scanning and deeper browsing.",
-    status: "Live project",
+    problem: "Fixtures, results, club context, and football stories are often spread across separate places. Readers need a fast way to see what matters now before choosing what to read or explore next.",
+    contribution: "My work focused on the homepage hierarchy, match-day information architecture, news and club-navigation patterns, and responsive layouts for quick scanning and deeper browsing.",
+    status: "Implemented interface / public preview",
+    statusDetail: {
+      designed: "Match-day hierarchy, fixtures and results structure, teams and leagues navigation, and editorial content patterns.",
+      implemented: "Public interface preview with a football-led homepage, navigation structure, and responsive content direction.",
+      planned: "Live score feeds, fixture data, editorial CMS, search, and personalised team or league follow features."
+    },
     type: "soccer",
     liveUrl: "https://tanzania-football-hub.vercel.app/",
     image: "../assets/project-tanzania.png",
     imageAlt: "Tanzania Soccer Hub website showing a football news hero section",
     screenshotCaption: "A bold football home page built around match-day energy and editorial context.",
     features: [
-      ["Match-first scanning", "The landing experience makes current football stories and match context easy to spot."],
-      ["Teams and leagues", "Navigation gives clubs and competitions a clear place in the broader football story."],
-      ["News with context", "Editorial moments are presented as part of a connected football experience."],
-      ["Mobile match-day use", "The layout keeps essential information close at hand when readers are on the move."],
-      ["Club discovery", "Fans can move from a headline into the teams and competitions behind it."],
-      ["Editorial rhythm", "Visual emphasis gives important football moments a stronger sense of place."]
+      ["Match-day overview", "Give fans a fast view of current fixtures, results, and the stories around them."],
+      ["Fixtures and results", "Make upcoming and completed matches easy to scan and return to."],
+      ["Teams and leagues", "Give clubs and competitions a clear place in the broader football story."],
+      ["News with context", "Present football stories with enough context to understand why they matter."],
+      ["Search and discovery", "Help readers move from a headline to a team, league, or related story."],
+      ["Responsive match-day use", "Keep essential information close at hand when readers are on the move."]
     ],
     stack: "HTML, CSS, JavaScript, responsive web UI, information architecture",
     lessons: "A sports interface needs energy, but it also needs restraint. Prioritising the first scan helped the page feel lively without making the information hard to find.",
@@ -130,28 +140,33 @@ const caseStudyData = {
   "ubannest": {
     title: "UrbanNest",
     category: "Property marketplace",
-    intro: "A clearer property journey for people searching for a home and owners managing the next step in the relationship.",
-    overview: "UrbanNest is designed to make property discovery feel more approachable. Search, property context, and the next conversation are treated as one connected journey for seekers and owners.",
-    aim: "Make property discovery easier for seekers and listing management simpler for owners.",
+    intro: "A property marketplace concept for Tanzania, bringing property search, detailed listings, and enquiries into one clear experience.",
+    overview: "UrbanNest is a property marketplace concept for Tanzania, bringing property search, detailed listings, and enquiries into one clear experience. It is designed to help seekers explore suitable spaces while giving owners a workspace to present and manage their properties.",
+    aim: "Help people find properties that match their location, budget, and needs, understand their options, and connect with the advertiser. For owners, simplify the journey from creating a listing to managing interest.",
     targetUsers: "Home seekers, landlords, agents, and property owners",
-    problem: "Property discovery can be noisy and uncertain. People need a trusted way to narrow options, understand a listing, and know what to do next; owners need a simple place to manage enquiries.",
-    contribution: "I shaped the experience direction, search journey, listing hierarchy, owner workspace concept, and responsive front-end interface.",
-    status: "Live project",
+    problem: "Property information is often scattered or incomplete, making comparison difficult. Seekers need clear prices, locations, features, and contact options. Owners need an organised way to update listings and respond to enquiries.",
+    contribution: "My work focused on the search journey, property page structure, registration flow, and separate workspaces for seekers and owners. I also explored responsive layouts that keep navigation, forms, and property media easy to use across screen sizes.",
+    status: "Implemented interface / public preview",
+    statusDetail: {
+      designed: "Search filters, property hierarchy, registration flow, seeker and owner journeys, and responsive page layouts.",
+      implemented: "Public interface preview with a search entry point, listing presentation, responsive structure, and owner-portal direction.",
+      planned: "Data-backed listings, authentication, live enquiries, viewing requests, and role permissions."
+    },
     type: "property",
     liveUrl: "https://urban-nest-topaz.vercel.app/",
     image: "../assets/project-ubannest.png",
     imageAlt: "UrbanNest property platform showing the home search interface",
     screenshotCaption: "The search entry point for finding homes and property opportunities across Tanzania.",
     features: [
-      ["Location search", "People can begin with the place and property context that matters to them."],
-      ["Organised listings", "Property information is structured to make comparison and decision-making easier."],
-      ["Saved properties", "Visitors can keep track of options they want to revisit while searching."],
-      ["Owner workspace", "A focused dashboard direction helps owners manage listings and enquiries."],
-      ["Photo and video context", "Rich listing media helps people understand a property before enquiring."],
-      ["Direct enquiries", "The journey connects a promising listing with a clear next conversation."]
+      ["Location search", "Narrow properties by region, district, and ward, alongside property type, budget, and sale or rental preference."],
+      ["Organised listings", "Present prices, locations, descriptions, amenities, and availability consistently so visitors can compare options."],
+      ["Saved properties", "Give seekers a personal shortlist of properties they want to revisit."],
+      ["Owner workspace", "Bring listing creation, editing, publication status, enquiries, and viewing requests into one dashboard."],
+      ["Photos and video tours", "Show galleries and walkthroughs that help visitors understand the layout and character of a property."],
+      ["Enquiries and viewings", "Let visitors ask questions or request a viewing directly from the property page, with clear request status."]
     ],
-    stack: "HTML, CSS, JavaScript, responsive web UI, search and listing patterns",
-    lessons: "Property products need to build confidence one decision at a time. Clear filters, consistent listing details, and a visible next action made the experience feel more trustworthy.",
+    stack: "HTML, CSS, JavaScript, responsive layouts, reusable interface patterns, interactive search and listing elements",
+    lessons: "This project highlighted the importance of consistent property information, useful filters, and clear next actions. Designing separate seeker and owner journeys also helped me think carefully about permissions, dashboard organisation, and how each role moves through the platform.",
     walkthrough: "Static preview of the UrbanNest search experience. A recorded demo can be added when one is available.",
     demoUrl: "",
     sourceUrl: ""
@@ -159,28 +174,33 @@ const caseStudyData = {
   slcms: {
     title: "SLCMS",
     category: "Legal management system",
-    intro: "A structured workspace for legal teams to keep matters, clients, documents, and deadlines moving.",
-    overview: "SLCMS is organised around the everyday rhythm of legal work. It makes important information visible without making a complex workflow feel heavy.",
+    intro: "A legal case management interface concept for keeping matters, clients, documents, and deadlines connected in one workspace.",
+    overview: "SLCMS is a legal case management interface concept organised around the everyday rhythm of legal work. It gives legal teams and authorised clients a clearer way to enter the right workspace and see the information that needs attention next.",
     aim: "Help legal teams see what needs attention next while keeping matters, clients, documents, and deadlines connected.",
     targetUsers: "Law-firm partners, advocates, operations staff, and clients",
-    problem: "Legal teams lose time when matter details, deadlines, documents, and client information live in disconnected places. The workspace needs to make the next action visible without compromising clarity.",
-    contribution: "I mapped the workflow, shaped the dashboard direction, organised the information hierarchy, and designed the responsive system interface patterns.",
-    status: "Live project",
+    problem: "Legal teams lose time when matter details, deadlines, documents, and client information live in disconnected places. The workspace needs to make the next action visible without making a complex legal workflow harder to understand.",
+    contribution: "My work focused on the portal entry experience, dashboard hierarchy, matter and client information patterns, document visibility, and responsive system-interface layouts.",
+    status: "Implemented interface / public preview",
+    statusDetail: {
+      designed: "Portal entry, dashboard hierarchy, matter and client views, document patterns, and role-specific workspace directions.",
+      implemented: "Public interface preview with secure-looking portal entry, workspace paths, and responsive visual system patterns.",
+      planned: "Persistent case data, authentication, role-based access control, document storage, and deadline automation."
+    },
     type: "system",
     liveUrl: "https://smart-legal-case-management-system-gules.vercel.app/",
     image: "../assets/project-slcms.png",
     imageAlt: "SLCMS legal management system showing its secure portal interface",
     screenshotCaption: "A secure-looking entry point for legal teams and clients to access the right workspace.",
     features: [
-      ["Matter overview", "The workspace gives teams a clearer view of active legal work and its current state."],
-      ["Deadline visibility", "Important dates and follow-up work have a visible place in the experience."],
-      ["Client and document context", "Connected information helps teams move between people, matters, and files."],
-      ["Repeatable system patterns", "A consistent interface foundation is designed for frequent, focused use."],
-      ["Secure access", "Separate entry paths keep the workspace clear for teams and clients."],
-      ["Next-action focus", "The hierarchy helps legal teams see what needs attention without extra noise."]
+      ["Secure portal entry", "Give authorised staff and clients a clear route into the right workspace."],
+      ["Matter overview", "Give teams a clearer view of active legal work and its current state."],
+      ["Deadline visibility", "Keep important dates, tasks, and follow-up work visible in the experience."],
+      ["Clients and case parties", "Connect people to the matters, files, and proceedings relevant to them."],
+      ["Documents and dockets", "Make case documents and court-related information easier to locate."],
+      ["Role-based workspaces", "Shape different paths for firm personnel, counsel, and client access."]
     ],
-    stack: "HTML, CSS, JavaScript, responsive dashboard UI, workflow mapping",
-    lessons: "Complex systems become easier to use when the interface respects the team's mental model. The most useful dashboard content is the work that needs attention next.",
+    stack: "HTML, CSS, JavaScript, responsive dashboard layouts, workflow mapping, interface patterns",
+    lessons: "Complex systems become easier to use when the interface respects the team's mental model. The most useful dashboard content is the work that needs attention next, while access boundaries need to stay clear in every path.",
     walkthrough: "Static preview of the SLCMS entry experience. A recorded demo can be added when one is available.",
     demoUrl: "",
     sourceUrl: ""
@@ -267,6 +287,9 @@ function populateProjectPage() {
   setText('[data-project-purpose]', project.purpose);
   setText('[data-project-contribution]', project.contribution);
   setText('[data-project-status]', project.status);
+  setText('[data-project-status-designed]', project.statusDetail.designed);
+  setText('[data-project-status-implemented]', project.statusDetail.implemented);
+  setText('[data-project-status-planned]', project.statusDetail.planned);
   setText('[data-project-stack]', project.stack);
   const featureList = $('[data-project-features]');
   if (featureList) featureList.innerHTML = project.features.map((feature) => `<li>${feature}</li>`).join("");
@@ -316,7 +339,7 @@ function populateCaseStudyPage() {
   if (!root) return;
   const key = root.dataset.project || new URLSearchParams(window.location.search).get("project") || "century-expeditions";
   const project = caseStudyData[key];
-  if (!project) return;
+  if (!project) { populateProjectPage(); return; }
   document.title = `${project.title} - Kai10`;
   const metaDescription = $('meta[name="description"]');
   if (metaDescription) metaDescription.content = `${project.title} project case study from Kai10.`;
