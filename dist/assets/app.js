@@ -88,7 +88,9 @@ const caseStudyData = {
       ["Destination storytelling", "A spacious, editorial layout gives each place room to create interest."],
       ["Experience-led discovery", "Safari, culture, beaches, and journeys are organised around how people choose to travel."],
       ["Planning next steps", "Clear calls to action help visitors move from inspiration to an enquiry."],
-      ["Responsive travel browsing", "The experience stays useful when plans are being made from a phone."]
+      ["Responsive travel browsing", "The experience stays useful when plans are being made from a phone."],
+      ["Journey confidence", "Helpful content keeps the next decision visible without adding pressure."],
+      ["Enquiry-ready structure", "The page leaves visitors with a clear route to ask for a tailored trip."]
     ],
     stack: "HTML, CSS, JavaScript, responsive web UI, content-led layout",
     lessons: "Strong visual hierarchy can make a rich destination catalogue feel easy to explore. The key was keeping the first action obvious while letting the imagery carry the emotion.",
@@ -115,7 +117,9 @@ const caseStudyData = {
       ["Match-first scanning", "The landing experience makes current football stories and match context easy to spot."],
       ["Teams and leagues", "Navigation gives clubs and competitions a clear place in the broader football story."],
       ["News with context", "Editorial moments are presented as part of a connected football experience."],
-      ["Mobile match-day use", "The layout keeps essential information close at hand when readers are on the move."]
+      ["Mobile match-day use", "The layout keeps essential information close at hand when readers are on the move."],
+      ["Club discovery", "Fans can move from a headline into the teams and competitions behind it."],
+      ["Editorial rhythm", "Visual emphasis gives important football moments a stronger sense of place."]
     ],
     stack: "HTML, CSS, JavaScript, responsive web UI, information architecture",
     lessons: "A sports interface needs energy, but it also needs restraint. Prioritising the first scan helped the page feel lively without making the information hard to find.",
@@ -142,7 +146,9 @@ const caseStudyData = {
       ["Location search", "People can begin with the place and property context that matters to them."],
       ["Organised listings", "Property information is structured to make comparison and decision-making easier."],
       ["Saved properties", "Visitors can keep track of options they want to revisit while searching."],
-      ["Owner workspace", "A focused dashboard direction helps owners manage listings and enquiries."]
+      ["Owner workspace", "A focused dashboard direction helps owners manage listings and enquiries."],
+      ["Photo and video context", "Rich listing media helps people understand a property before enquiring."],
+      ["Direct enquiries", "The journey connects a promising listing with a clear next conversation."]
     ],
     stack: "HTML, CSS, JavaScript, responsive web UI, search and listing patterns",
     lessons: "Property products need to build confidence one decision at a time. Clear filters, consistent listing details, and a visible next action made the experience feel more trustworthy.",
@@ -169,7 +175,9 @@ const caseStudyData = {
       ["Matter overview", "The workspace gives teams a clearer view of active legal work and its current state."],
       ["Deadline visibility", "Important dates and follow-up work have a visible place in the experience."],
       ["Client and document context", "Connected information helps teams move between people, matters, and files."],
-      ["Repeatable system patterns", "A consistent interface foundation is designed for frequent, focused use."]
+      ["Repeatable system patterns", "A consistent interface foundation is designed for frequent, focused use."],
+      ["Secure access", "Separate entry paths keep the workspace clear for teams and clients."],
+      ["Next-action focus", "The hierarchy helps legal teams see what needs attention without extra noise."]
     ],
     stack: "HTML, CSS, JavaScript, responsive dashboard UI, workflow mapping",
     lessons: "Complex systems become easier to use when the interface respects the team's mental model. The most useful dashboard content is the work that needs attention next.",
@@ -280,6 +288,29 @@ function escapeCaseStudyHTML(value) {
   return node.innerHTML;
 }
 
+function casePanelMarkup(type, variant = 0) {
+  const panels = {
+    travel: [
+      ["CENTURY EXPEDITIONS", "Serengeti Safari", "Wildlife / 7 days", "Plan this journey"],
+      ["CENTURY EXPEDITIONS", "Choose your route", "Northern circuit / Coast", "Explore destinations"]
+    ],
+    soccer: [
+      ["TANZANIA SOCCER HUB", "NBC Premier League", "Match centre / Live", "Follow the action"],
+      ["TANZANIA SOCCER HUB", "Teams & leagues", "Clubs / Fixtures / News", "Explore football"]
+    ],
+    property: [
+      ["URBANNEST", "Modern villa in Dar", "Dar es Salaam / For sale", "View property"],
+      ["URBANNEST", "Owner workspace", "12 active listings / 8 enquiries", "Manage listings"]
+    ],
+    system: [
+      ["SLCMS", "Matter overview", "Deadlines / Documents / Tasks", "Open matter"],
+      ["SLCMS", "Client portal", "Secure access / Case files", "Enter workspace"]
+    ]
+  };
+  const panel = panels[type][variant % panels[type].length];
+  return `<div class="case-panel case-panel-${type}"><div class="case-panel-top"><b>${panel[0]}</b><span>Menu</span></div><div class="case-panel-body"><span class="case-panel-kicker">${panel[2]}</span><strong>${panel[1]}</strong><span class="case-panel-action">${panel[3]}</span><i></i><i></i><i></i></div></div>`;
+}
+
 function populateCaseStudyPage() {
   const root = $('[data-project-root]');
   if (!root) return;
@@ -305,7 +336,7 @@ function populateCaseStudyPage() {
   setText('[data-project-walkthrough-note]', project.walkthrough);
 
   const stage = $('[data-project-art]');
-  if (stage) stage.innerHTML = `<div class="case-art-glow" aria-hidden="true"></div><div class="case-art-orbit orbit-one" aria-hidden="true"></div><div class="case-art-orbit orbit-two" aria-hidden="true"></div><figure class="case-art-card"><img src="${escapeCaseStudyHTML(project.image)}" alt="${escapeCaseStudyHTML(project.imageAlt)}" /><figcaption>${escapeCaseStudyHTML(project.title)} interface preview</figcaption></figure>`;
+  if (stage) stage.innerHTML = `<div class="case-art-glow" aria-hidden="true"></div><div class="case-art-orbit orbit-one" aria-hidden="true"></div><div class="case-art-orbit orbit-two" aria-hidden="true"></div><div class="case-art-core" aria-hidden="true"><span></span></div><div class="case-art-dot dot-a" aria-hidden="true"></div><div class="case-art-dot dot-b" aria-hidden="true"></div><div class="case-art-dot dot-c" aria-hidden="true"></div><div class="case-art-label"><span>${escapeCaseStudyHTML(project.category)}</span><strong>${escapeCaseStudyHTML(project.title)}</strong></div>`;
   const walkthroughImage = $('[data-project-walkthrough-image]');
   if (walkthroughImage) { walkthroughImage.src = project.image; walkthroughImage.alt = project.imageAlt; }
 
@@ -316,7 +347,7 @@ function populateCaseStudyPage() {
 
   const gallery = $('[data-project-gallery]');
   if (gallery) {
-    gallery.innerHTML = `<figure class="screenshot-card screenshot-primary"><button class="screenshot-button" type="button" data-screenshot-open aria-label="Open ${escapeCaseStudyHTML(project.title)} screenshot"><img src="${escapeCaseStudyHTML(project.image)}" alt="${escapeCaseStudyHTML(project.imageAlt)}" /></button><figcaption><strong>Primary interface</strong><span>${escapeCaseStudyHTML(project.screenshotCaption)}</span></figcaption></figure><figure class="screenshot-card screenshot-secondary"><div class="screenshot-art">${artMarkup(project.type)}</div><figcaption><strong>Experience direction</strong><span>Key layout and interaction cues carried through the project.</span></figcaption></figure>`;
+    gallery.innerHTML = `<figure class="screenshot-card screenshot-primary"><button class="screenshot-button" type="button" data-screenshot-open aria-label="Open ${escapeCaseStudyHTML(project.title)} screenshot"><img src="${escapeCaseStudyHTML(project.image)}" alt="${escapeCaseStudyHTML(project.imageAlt)}" /></button><figcaption><strong>Homepage</strong><span>${escapeCaseStudyHTML(project.screenshotCaption)}</span></figcaption></figure><figure class="screenshot-card screenshot-secondary"><div class="screenshot-art">${casePanelMarkup(project.type, 0)}</div><figcaption><strong>Core flow</strong><span>One clear path through the main experience.</span></figcaption></figure><figure class="screenshot-card screenshot-secondary"><div class="screenshot-art">${casePanelMarkup(project.type, 1)}</div><figcaption><strong>Supporting view</strong><span>Secondary information stays close to the next action.</span></figcaption></figure>`;
   }
 
   const live = $('[data-live-project]');
