@@ -66,7 +66,7 @@ const projectData = {
   }
 };
 
-const caseStudyOrder = ["century-expeditions", "ubannest", "tanzania-soccer-hub", "slcms"];
+const caseStudyOrder = ["century-expeditions", "ubannest", "tanzania-soccer-hub", "slcms", "sacred-heart-secondary-school"];
 
 const caseStudyData = {
   "century-expeditions": {
@@ -101,7 +101,7 @@ const caseStudyData = {
     lessons: "Strong visual hierarchy can make a rich destination catalogue feel easy to explore. The key was keeping the first action obvious while letting the imagery carry the emotion.",
     walkthrough: "Static preview of the shipped landing experience. A recorded demo can be added when one is available.",
     demoUrl: "",
-    sourceUrl: ""
+    sourceUrl: "https://github.com/evanskaija/century-expeditions"
   },
   "tanzania-soccer-hub": {
     title: "Tanzania Soccer Hub",
@@ -135,7 +135,7 @@ const caseStudyData = {
     lessons: "A sports interface needs energy, but it also needs restraint. Prioritising the first scan helped the page feel lively without making the information hard to find.",
     walkthrough: "Static preview of the football hub home page. A recorded demo can be added when one is available.",
     demoUrl: "",
-    sourceUrl: ""
+    sourceUrl: "https://github.com/evanskaija/Tanzania-football-hub"
   },
   "ubannest": {
     title: "UrbanNest",
@@ -165,11 +165,11 @@ const caseStudyData = {
       ["Photos and video tours", "Show galleries and walkthroughs that help visitors understand the layout and character of a property."],
       ["Enquiries and viewings", "Let visitors ask questions or request a viewing directly from the property page, with clear request status."]
     ],
-    stack: "HTML, CSS, JavaScript, responsive layouts, reusable interface patterns, interactive search and listing elements",
+    stack: "HTML, CSS, JavaScript, Bootstrap 5, Font Awesome, responsive layouts, interactive search and listing elements",
     lessons: "This project highlighted the importance of consistent property information, useful filters, and clear next actions. Designing separate seeker and owner journeys also helped me think carefully about permissions, dashboard organisation, and how each role moves through the platform.",
     walkthrough: "Static preview of the UrbanNest search experience. A recorded demo can be added when one is available.",
     demoUrl: "",
-    sourceUrl: ""
+    sourceUrl: "https://github.com/evanskaija/UrbanNest"
   },
   slcms: {
     title: "SLCMS",
@@ -180,11 +180,11 @@ const caseStudyData = {
     targetUsers: "Law-firm partners, advocates, operations staff, and clients",
     problem: "Legal teams lose time when matter details, deadlines, documents, and client information live in disconnected places. The workspace needs to make the next action visible without making a complex legal workflow harder to understand.",
     contribution: "My work focused on the portal entry experience, dashboard hierarchy, matter and client information patterns, document visibility, and responsive system-interface layouts.",
-    status: "Implemented interface / public preview",
+    status: "Implemented interface / backend repository",
     statusDetail: {
-      designed: "Portal entry, dashboard hierarchy, matter and client views, document patterns, and role-specific workspace directions.",
-      implemented: "Public interface preview with secure-looking portal entry, workspace paths, and responsive visual system patterns.",
-      planned: "Persistent case data, authentication, role-based access control, document storage, and deadline automation."
+      designed: "Portal entry, dashboard hierarchy, matter and client views, document patterns, legal research, and role-specific workspace directions.",
+      implemented: "A Vanilla JavaScript SPA with CSS design tokens and Chart.js, plus a Java 17 / Spring Boot backend with REST APIs, document extraction, OCR, and legal-search foundations.",
+      planned: "Production deployment of the full stack, live data integrations, and continued security and workflow QA."
     },
     type: "system",
     liveUrl: "https://smart-legal-case-management-system-gules.vercel.app/",
@@ -199,11 +199,45 @@ const caseStudyData = {
       ["Documents and dockets", "Make case documents and court-related information easier to locate."],
       ["Role-based workspaces", "Shape different paths for firm personnel, counsel, and client access."]
     ],
-    stack: "HTML, CSS, JavaScript, responsive dashboard layouts, workflow mapping, interface patterns",
+    stack: "Vanilla JavaScript, CSS3 design tokens, Chart.js, Java 17, Spring Boot, REST APIs, Apache PDFBox, Apache POI, Tess4J",
     lessons: "Complex systems become easier to use when the interface respects the team's mental model. The most useful dashboard content is the work that needs attention next, while access boundaries need to stay clear in every path.",
     walkthrough: "Static preview of the SLCMS entry experience. A recorded demo can be added when one is available.",
     demoUrl: "",
-    sourceUrl: ""
+    sourceUrl: "https://github.com/evanskaija/Smart-Legal-Case-Management-System"
+  },
+  "sacred-heart-secondary-school": {
+    title: "Sacred Heart Secondary School",
+    category: "School website & app",
+    intro: "An official school website and mobile-app experience that brings academics, admissions, student life, and community information into one welcoming place.",
+    overview: "Sacred Heart Secondary School - Connect is designed to give students, families, applicants, and staff a clear way to understand the school and reach the information they need. The experience brings public school content together with portal and administration paths.",
+    aim: "Help families understand the school, explore learning and admission pathways, and stay connected to the wider school community.",
+    targetUsers: "Students, parents, applicants, staff, and the school community",
+    problem: "School information can be spread across departments, notices, and separate conversations. Families need a trusted place to understand academics, admissions, services, student life, and next steps.",
+    contribution: "My work focused on the information structure and responsive React experience across academics, admissions, student life, staff, facilities, news, and school portals.",
+    status: "Implemented web app / public preview",
+    statusDetail: {
+      designed: "A clear school information architecture with routes for academics, admissions, services, news, student life, staff, facilities, and authenticated portal areas.",
+      implemented: "A Vite, React, and TypeScript application with reusable components, responsive Tailwind UI, Supabase integration, and Framer Motion interactions in the repository.",
+      planned: "Ongoing content publishing, production data workflows, and deeper role-specific portal features as the school experience grows."
+    },
+    type: "school",
+    liveUrl: "https://school-website-tau-umber.vercel.app/",
+    image: "../assets/project-school.png",
+    imageAlt: "Sacred Heart Secondary School website showing a school information experience",
+    screenshotCaption: "A welcoming entry point for discovering the school and finding the right next step.",
+    features: [
+      ["Academic pathways", "Help families explore the school’s learning stages and academic direction."],
+      ["Admissions information", "Make admission questions, requirements, and next actions easier to find."],
+      ["Student life", "Show the people, activities, services, and community experiences around learning."],
+      ["News and events", "Give the school a clear place to share updates, announcements, and upcoming moments."],
+      ["Staff and facilities", "Present the people and spaces that help families understand the school in context."],
+      ["School portals", "Create a route toward role-specific areas for students, staff, and administration."]
+    ],
+    stack: "Vite, React, TypeScript, shadcn/ui, Tailwind CSS, Supabase, Framer Motion",
+    lessons: "A school website has to balance warmth with clarity. Separating public information from portal routes helped keep the first visit approachable while leaving room for more focused workflows for students, staff, and administrators.",
+    walkthrough: "Static preview of the school website experience. A recorded demo can be added when one is available.",
+    demoUrl: "",
+    sourceUrl: "https://github.com/evanskaija/school-website"
   }
 };
 
@@ -324,6 +358,10 @@ function casePanelMarkup(type, variant = 0) {
     property: [
       ["URBANNEST", "Modern villa in Dar", "Dar es Salaam / For sale", "View property"],
       ["URBANNEST", "Owner workspace", "12 active listings / 8 enquiries", "Manage listings"]
+    ],
+    school: [
+      ["SACRED HEART", "Explore the school", "Academics / Admissions / Student life", "Discover the school"],
+      ["SACRED HEART", "School community", "News / Staff / Facilities", "See what is happening"]
     ],
     system: [
       ["SLCMS", "Matter overview", "Deadlines / Documents / Tasks", "Open matter"],
@@ -493,7 +531,8 @@ function normalizeProjectLinksAndLabels() {
     "century-expeditions.html": "case-study.html?project=century-expeditions",
     "tanzania-soccer-hub.html": "case-study.html?project=tanzania-soccer-hub",
     "ubannest.html": "case-study.html?project=ubannest",
-    "slcms.html": "case-study.html?project=slcms"
+    "slcms.html": "case-study.html?project=slcms",
+    "sacred-heart-secondary-school.html": "case-study.html?project=sacred-heart-secondary-school"
   };
   $$('a[href]').forEach((link) => {
     const href = link.getAttribute("href") || "";
