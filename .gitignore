@@ -1,0 +1,9 @@
+# Temporary archives and executables
+*.tar
+*.exe
+.tmp-git/
+.openai/
+
+# OS generated files
+.DS_Store
+Thumbs.db

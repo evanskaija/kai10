@@ -260,7 +260,10 @@ function projectKeyFromHref(href) {
   return caseStudyOrder.find((key) => href.includes(`${key}.html`)) || null;
 }
 
-function projectUrl(key) { return `projects/case-study.html?project=${key}`; }
+function projectUrl(key) {
+  const isRootPage = !window.location.pathname.includes("/dist/");
+  return `${isRootPage ? "dist/" : ""}projects/case-study.html?project=${key}`;
+}
 
 function syncProjectDirectory() {
   $$('[data-project-card]').forEach((card) => {
