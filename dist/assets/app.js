@@ -21,7 +21,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/century-expeditions",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-century.png",
+    image: "../assets/project-century.jpg",
     imageAlt: "Century Expeditions website showing a Tanzania travel landing page",
     screenshotCaption: "A visual entry point for discovering Tanzania and planning a journey.",
     gallery: [
@@ -59,7 +59,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/UrbanNest",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-ubannest.png",
+    image: "../assets/project-ubannest.jpg",
     imageAlt: "UrbanNest property platform showing the home search interface for Dar es Salaam",
     screenshotCaption: "The search entry point for finding homes and property opportunities in Dar es Salaam.",
     gallery: [
@@ -97,7 +97,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/Tanzania-football-hub",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-tanzania.png",
+    image: "../assets/project-tanzania.jpg",
     imageAlt: "Tanzania Soccer Hub website showing a football news hero section",
     screenshotCaption: "A football home page built around match-day energy and editorial context.",
     gallery: [
@@ -135,7 +135,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/school-website",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-school.png",
+    image: "../assets/project-school.jpg",
     imageAlt: "Sacred Heart Secondary School website showing students and the school identity",
     screenshotCaption: "A welcoming school homepage built around excellence, tradition, and community.",
     gallery: [
@@ -173,7 +173,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/Smart-Legal-Case-Management-System",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-slcms.png",
+    image: "../assets/project-slcms.jpg",
     imageAlt: "SLCMS legal management system showing its secure portal interface",
     screenshotCaption: "A secure-looking entry point for legal teams and clients to access the right workspace.",
     gallery: [
@@ -233,10 +233,6 @@ function initMenu() {
 function initReveal() {
   const autoRevealSelectors = [
     "main > *",
-    "main > * > section",
-    "main > * > article",
-    "main > * > aside",
-    "main > * > form",
     ".about-note",
     ".focus-card",
     ".value-card",
@@ -248,12 +244,22 @@ function initReveal() {
     "footer.site-footer"
   ];
   autoRevealSelectors.forEach((selector) => $$(selector).forEach((element) => element.classList.add("reveal")));
-  const items = $$('.reveal');
-  if (!items.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) { items.forEach((item) => item.classList.add("is-visible")); return; }
-  const observer = new IntersectionObserver((entries, observerRef) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observerRef.unobserve(entry.target); } }), { threshold: .12 });
+  const items = $$(".reveal");
+  if (!items.length) return;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+  document.documentElement.classList.add("reveal-ready");
+  const observer = new IntersectionObserver((entries, observerRef) => entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observerRef.unobserve(entry.target);
+    }
+  }), { threshold: .12, rootMargin: "0px 0px -5%" });
   items.forEach((item) => observer.observe(item));
 }
-
 function projectKeyFromHref(href) {
   const query = href.match(/[?&]project=([^&]+)/);
   if (query && projectRecords[query[1]]) return query[1];
