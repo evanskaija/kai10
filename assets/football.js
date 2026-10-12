@@ -17,6 +17,7 @@
   let active = 0;
   let timer;
   let paused = false;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const render = (index) => {
     active = (index + stories.length) % stories.length;
@@ -39,8 +40,11 @@
 
   const schedule = () => {
     window.clearInterval(timer);
-    if (!paused) timer = window.setInterval(() => render(active + 1), 8000);
+    if (!paused && !reducedMotion && !document.hidden) timer = window.setInterval(() => render(active + 1), 8000);
   };
+
+  document.addEventListener('visibilitychange', schedule);
+  $$('[data-football-year]').forEach((element) => { element.textContent = new Date().getFullYear(); });
 
   $("[data-football-prev]").addEventListener("click", () => { render(active - 1); schedule(); });
   $("[data-football-next]").addEventListener("click", () => { render(active + 1); schedule(); });

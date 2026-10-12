@@ -1,8 +1,9 @@
 # Temporary archives and executables
 *.tar
 *.exe
+*.zip
+.mingit*
 .tmp-git/
-.openai/
 
 # OS generated files
 .DS_Store

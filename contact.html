@@ -5,17 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#102a4c" />
     <meta name="description" content="Start a conversation with Kai10 about a website, system interface, or digital product." />
-    <link rel="icon" type="image/svg+xml" href="dist/assets/mark.svg" />
-    <link rel="stylesheet" href="dist/assets/styles.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      @media (max-width: 680px) {
+        body[data-page="contact"] .site-shell > .site-header {
+          position: fixed !important;
+          top: 0 !important;
+          left: 50% !important;
+          width: min(560px, calc(100% - 28px)) !important;
+          height: 72px !important;
+          min-height: 72px !important;
+          margin: 0 !important;
+          padding: 10px 12px !important;
+          transform: translateX(-50%) !important;
+        }
+        body[data-page="contact"] .site-shell > .site-header .brand {
+          gap: 9px !important;
+          font-size: 23px !important;
+        }
+        body[data-page="contact"] .site-shell > .site-header .brand img {
+          width: 41px !important;
+          height: 41px !important;
+        }
+        body[data-page="contact"] .site-shell > .site-header .mobile-actions {
+          top: 10px !important;
+          right: 12px !important;
+        }
+      }
+    </style>
     <title>Contact Kai10</title>
   </head>
   <body data-page="contact">
-    <div class="site-shell contact-site">
-      <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Kai10 home"><img src="dist/assets/mark.svg" alt="Kai10" width="58" height="58" /><span>Kai10</span></a>
-        <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a class="nav-active" href="contact.html" aria-current="page">Contact</a><a class="button button-dark button-small" href="contact.html">Let's Talk <span aria-hidden="true">&#8594;</span></a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">&#9680;</span></button></nav>
-        <div class="mobile-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">&#9680;</span></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
-        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="button button-dark" href="contact.html">Let's Talk</a></nav>
+    <div class="site-shell">
+      <header class="site-header" data-header>
+        <a class="brand" href="index.html" aria-label="Kai10 home">
+          <img src="assets/logo-footer.png" alt="Kai10" width="58" height="58" />
+          <span>Kai10</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a class="nav-active" href="contact.html" aria-current="page">Contact</a>
+          <a class="button button-dark button-small" href="contact.html">Let's Talk</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
+        </nav>
+        <div class="mobile-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+          <a class="button button-dark" href="contact.html">Let's Talk</a>
+        </nav>
       </header>
 
       <main class="contact-page contact-reference">
@@ -60,8 +112,8 @@
         <section class="contact-band contact-final"><div class="contact-copy"><p class="eyebrow">Good projects start with a conversation.</p><h2>Have an idea? Let's bring it to life<span>.</span></h2><p>Whether it's a new website, a custom system, or a digital product, I'd love to hear about your project.</p></div><a class="button button-aqua" href="contact.html">Let's Talk <span aria-hidden="true">&#8594;</span></a></section>
       </main>
 
-      <footer class="site-footer"><a class="brand" href="index.html" aria-label="Kai10 home"><img src="dist/assets/mark.svg" alt="Kai10" width="54" height="54" /><span>Kai10</span></a><nav aria-label="Footer navigation"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><span class="footer-meta">&copy; <span data-year></span> Kai10</span></footer>
+      <footer class="site-footer"><a class="brand" href="index.html" aria-label="Kai10 home"><img src="assets/logo-header.png" alt="Kai10" width="54" height="54" /><span>Kai10</span></a><nav aria-label="Footer navigation"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><span class="footer-meta">&copy; <span data-year></span> Kai10</span></footer>
     </div>
-    <script src="dist/assets/app.js" defer></script>
+    <script src="assets/app.js" defer></script>
   </body>
 </html>

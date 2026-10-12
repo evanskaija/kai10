@@ -21,7 +21,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/century-expeditions",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-century.jpg",
+    image: "../assets/project-century.png",
     imageAlt: "Century Expeditions website showing a Tanzania travel landing page",
     screenshotCaption: "A visual entry point for discovering Tanzania and planning a journey.",
     gallery: [
@@ -59,7 +59,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/UrbanNest",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-ubannest.jpg",
+    image: "../assets/project-ubannest.png",
     imageAlt: "UrbanNest property platform showing the home search interface for Dar es Salaam",
     screenshotCaption: "The search entry point for finding homes and property opportunities in Dar es Salaam.",
     gallery: [
@@ -97,7 +97,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/Tanzania-football-hub",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-tanzania.jpg",
+    image: "../assets/project-tanzania.png",
     imageAlt: "Tanzania Soccer Hub website showing a football news hero section",
     screenshotCaption: "A football home page built around match-day energy and editorial context.",
     gallery: [
@@ -135,7 +135,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/school-website",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-school.jpg",
+    image: "../assets/project-school.png",
     imageAlt: "Sacred Heart Secondary School website showing students and the school identity",
     screenshotCaption: "A welcoming school homepage built around excellence, tradition, and community.",
     gallery: [
@@ -173,7 +173,7 @@ const projectRecords = {
     sourceUrl: "https://github.com/evanskaija/Smart-Legal-Case-Management-System",
     demoUrl: "",
     completionDate: "",
-    image: "../assets/project-slcms.jpg",
+    image: "../assets/project-slcms.png",
     imageAlt: "SLCMS legal management system showing its secure portal interface",
     screenshotCaption: "A secure-looking entry point for legal teams and clients to access the right workspace.",
     gallery: [
@@ -233,6 +233,10 @@ function initMenu() {
 function initReveal() {
   const autoRevealSelectors = [
     "main > *",
+    "main > * > section",
+    "main > * > article",
+    "main > * > aside",
+    "main > * > form",
     ".about-note",
     ".focus-card",
     ".value-card",
@@ -244,32 +248,19 @@ function initReveal() {
     "footer.site-footer"
   ];
   autoRevealSelectors.forEach((selector) => $$(selector).forEach((element) => element.classList.add("reveal")));
-  const items = $$(".reveal");
-  if (!items.length) return;
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reducedMotion || !("IntersectionObserver" in window)) {
-    items.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-  document.documentElement.classList.add("reveal-ready");
-  const observer = new IntersectionObserver((entries, observerRef) => entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      observerRef.unobserve(entry.target);
-    }
-  }), { threshold: .12, rootMargin: "0px 0px -5%" });
+  const items = $$('.reveal');
+  if (!items.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) { items.forEach((item) => item.classList.add("is-visible")); return; }
+  const observer = new IntersectionObserver((entries, observerRef) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observerRef.unobserve(entry.target); } }), { threshold: .12 });
   items.forEach((item) => observer.observe(item));
 }
+
 function projectKeyFromHref(href) {
   const query = href.match(/[?&]project=([^&]+)/);
   if (query && projectRecords[query[1]]) return query[1];
   return caseStudyOrder.find((key) => href.includes(`${key}.html`)) || null;
 }
 
-function projectUrl(key) {
-  const isRootPage = !window.location.pathname.includes("/dist/");
-  return `${isRootPage ? "dist/" : ""}projects/case-study.html?project=${key}`;
-}
+function projectUrl(key) { return `projects/case-study.html?project=${key}`; }
 
 function syncProjectDirectory() {
   $$('[data-project-card]').forEach((card) => {
@@ -376,12 +367,88 @@ function initGallery(project) {
   document.body.appendChild(dialog);
   const image = $('img', dialog); const caption = $('.dialog-caption', dialog);
   const update = () => { const item = project.gallery[active] || project.gallery[0]; image.src = project.image; image.alt = project.imageAlt; caption.textContent = item ? `${item.title} — ${item.caption}` : ""; };
-  const close = () => dialog.close();
-  buttons.forEach((button) => button.addEventListener("click", () => { active = Number(button.dataset.screenshotIndex) || 0; update(); dialog.showModal(); }));
+  const supportsModal = typeof dialog.showModal === 'function';
+  const close = () => {
+    if (supportsModal && dialog.open) dialog.close();
+    else dialog.removeAttribute('open');
+  };
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    active = Number(button.dataset.screenshotIndex) || 0;
+    update();
+    if (supportsModal) dialog.showModal();
+    else dialog.setAttribute('open', '');
+  }));
   $('.dialog-close', dialog).addEventListener("click", close);
   $('.dialog-prev', dialog).addEventListener("click", () => { active = (active - 1 + project.gallery.length) % project.gallery.length; update(); });
   $('.dialog-next', dialog).addEventListener("click", () => { active = (active + 1) % project.gallery.length; update(); });
   dialog.addEventListener("click", (event) => { if (event.target === dialog) close(); });
+}
+
+function initContactForm() {
+  const form = $('[data-contact-form]');
+  if (!form) return;
+
+  const status = $('[data-form-status]', form);
+  const submit = $('button[type=submit]', form);
+  const fields = $$('input[name], select[name], textarea[name]', form).filter((field) => field.name !== 'company');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const setError = (field, message) => {
+    const error = $(`[data-error='${field.name}']`, form);
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+    if (error) error.textContent = message;
+    return !message;
+  };
+
+  const validate = (field) => {
+    const value = field.value.trim();
+    if (field.required && !value) return setError(field, 'This field is required.');
+    if (field.type === 'email' && value && !emailPattern.test(value)) return setError(field, 'Enter a valid email address.');
+    return setError(field, '');
+  };
+
+  const setStatus = (message, type = '') => {
+    if (!status) return;
+    status.textContent = message;
+    status.className = 'form-status' + (type ? ' ' + type : '');
+  };
+
+  fields.forEach((field) => {
+    const eventName = field.tagName === 'SELECT' ? 'change' : 'input';
+    field.addEventListener(eventName, () => {
+      validate(field);
+      if (status && status.classList.contains('error')) setStatus('');
+    });
+  });
+
+  form.addEventListener('submit', (event) => {
+    const honeypot = form.elements.company;
+    if (honeypot && honeypot.value.trim()) {
+      event.preventDefault();
+      return;
+    }
+
+    const invalid = fields.filter((field) => !validate(field));
+    if (invalid.length) {
+      event.preventDefault();
+      setStatus('Please check the highlighted fields and try again.', 'error');
+      invalid[0].focus();
+      return;
+    }
+
+    if (window.location.protocol === 'file:') {
+      event.preventDefault();
+      setStatus('The contact form needs to be published with its /api/contact endpoint before it can send messages.', 'error');
+      return;
+    }
+
+    setStatus('Sending your message…');
+    if (submit) submit.disabled = true;
+  });
+
+  window.addEventListener('pageshow', () => {
+    if (submit) submit.disabled = false;
+  });
 }
 
 function initProjectDirectory() {
@@ -411,5 +478,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCaseStudy();
   initReveal();
   initProjectDirectory();
+  initContactForm();
   $$('[data-year]').forEach((element) => { element.textContent = new Date().getFullYear(); });
 });

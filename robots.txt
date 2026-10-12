@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kai10-virid.vercel.app/sitemap.xml
+Sitemap: https://kai10-portfolio.brave-root-3439.chatgpt.site/sitemap.xml
