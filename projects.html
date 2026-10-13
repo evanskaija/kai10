@@ -3,35 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#102a4c" />
+    <meta name="theme-color" content="#f7fafc" />
     <meta name="description" content="Explore Kai10 projects across travel, football, property, legal technology, and education." />
-    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="icon" type="image/png" sizes="1067x1067" href="assets/favicon.png?v=2" />
+    <link rel="stylesheet" href="assets/styles.css?v=projects-header-match-20261013-2" />
     <title>Projects - Kai10</title>
   </head>
   <body data-page="projects">
     <div class="site-shell projects-page">
-      <header class="site-header">
+      <header class="site-header" data-header>
         <a class="brand" href="index.html" aria-label="Kai10 home">
           <img src="assets/logo-footer.png" alt="Kai10" width="58" height="58" />
           <span>Kai10</span>
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
+          <a href="index.html#home">Home</a>
           <a class="nav-active" href="projects.html" aria-current="page">Projects</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a class="button button-dark button-small" href="contact.html">Let's Talk</a>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">&#9680;</span></button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">&#9680;</span>
+          </button>
         </nav>
         <div class="mobile-actions">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">&#9680;</span></button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">&#9680;</span>
+          </button>
           <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
         </div>
         <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
-          <a href="index.html">Home</a>
+          <a href="index.html#home">Home</a>
           <a href="projects.html" aria-current="page">Projects</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
@@ -41,7 +45,10 @@
 
       <main>
         <section class="projects-hero" aria-labelledby="projects-title">
-          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Projects</span></nav>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span>/</span><span>Projects</span>
+          </nav>
+
           <div class="projects-heading">
             <div>
               <p class="eyebrow">My portfolio</p>
@@ -50,111 +57,140 @@
             </div>
             <div class="projects-orbit" aria-hidden="true"><span></span><i></i></div>
           </div>
+
           <div class="project-controls" aria-label="Project filters">
             <div class="filter-list" role="group" aria-label="Filter projects by category">
               <button class="filter-button is-active" type="button" data-project-filter="all" aria-pressed="true">All Projects</button>
               <button class="filter-button" type="button" data-project-filter="travel" aria-pressed="false">Travel</button>
               <button class="filter-button" type="button" data-project-filter="sports" aria-pressed="false">Sports</button>
-              <button class="filter-button" type="button" data-project-filter="real-estate" aria-pressed="false">Real Estate</button>
-              <button class="filter-button" type="button" data-project-filter="legal-tech" aria-pressed="false">Legal Tech</button>
+              <button class="filter-button" type="button" data-project-filter="property" aria-pressed="false">Real Estate</button>
+              <button class="filter-button" type="button" data-project-filter="legal" aria-pressed="false">Legal Tech</button>
               <button class="filter-button" type="button" data-project-filter="education" aria-pressed="false">Education</button>
             </div>
-            <label class="project-search"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">Search projects</span><input type="search" data-project-search placeholder="Search projects..." /></label>
+            <label class="project-search">
+              <span class="search-icon" aria-hidden="true"></span>
+              <span class="sr-only">Search projects</span>
+              <input type="search" data-project-search placeholder="Search projects..." />
+            </label>
             <span class="project-count" data-project-count>5 projects</span>
           </div>
         </section>
 
         <section class="portfolio-grid" aria-label="Selected projects">
-          <article class="portfolio-card" data-project-card data-category="travel" data-search="century expeditions travel website tanzania safari">
-            <a class="portfolio-art" href="https://century-expeditions.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Century Expeditions live project">
-              <img class="portfolio-image" src="assets/project-century.png" alt="Century Expeditions live website preview" />
-              <div class="art-browser">
-                <div class="art-top"><span class="art-logo">O <b>CENTURY</b><small>EXPEDITIONS</small></span><span>Home &nbsp; Destinations &nbsp; Experiences</span><b class="art-cta">Plan Your Safari</b></div>
-                <div class="art-photo art-safari"><span class="art-photo-copy">Discover<br />Tanzania's<br />Wild Beauty</span><span class="art-elephant">O</span></div>
-              </div>
+          <article class="portfolio-card" data-project-card data-category="travel" data-search="century expeditions travel website tanzania safari destinations planning enquiries">
+            <a class="portfolio-art" href="https://century-expeditions.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Century Expeditions live website">
+              <img class="portfolio-image" src="assets/project-century.png" alt="Century Expeditions live website preview" loading="lazy" />
             </a>
             <div class="portfolio-info">
-              <div class="portfolio-title"><div class="portfolio-icon icon-travel">&#9823;</div><div><h2>Century Expeditions</h2><p>Travel Website</p></div></div>
-              <p>A destination-led travel website for exploring Tanzania and planning memorable journeys.</p>
+              <div class="portfolio-title">
+                <div class="portfolio-icon" aria-hidden="true">&#9823;</div>
+                <div><h2>Century Expeditions</h2><p>Travel website</p></div>
+              </div>
+              <p>A travel website for discovering Tanzania's wild places, choosing a safari direction, and taking the next step with confidence.</p>
               <div class="project-tags"><span>Destinations</span><span>Safari Planning</span><span>Enquiries</span></div>
             </div>
-            <div class="portfolio-actions"><a href="https://century-expeditions.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a><a class="view-project" href="projects/case-study.html?project=century-expeditions">View Project <span aria-hidden="true">&#8594;</span></a></div>
+            <div class="portfolio-actions">
+              <a class="live-project" href="https://century-expeditions.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a>
+              <a class="view-project" href="projects/case-study.html?project=century-expeditions">View Project <span aria-hidden="true">&#8594;</span></a>
+            </div>
           </article>
 
-          <article class="portfolio-card" data-project-card data-category="sports" data-search="tanzania soccer hub football sports fixtures matches">
-            <a class="portfolio-art" href="https://tanzania-football-hub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Tanzania Soccer Hub live project">
-              <img class="portfolio-image" src="assets/project-tanzania.png" alt="Tanzania Soccer Hub live website preview" />
-              <div class="art-browser">
-                <div class="art-top dark-top"><span class="art-logo"><span class="aqua-dot"></span><b>TANZANIA</b><small>SOCCER HUB</small></span><span>Matches &nbsp; Teams &nbsp; Leagues &nbsp; News</span><b class="search-dot">O</b></div>
-                <div class="art-photo art-football"><span class="football-glow"></span><span class="art-photo-copy">Tanzanian Football<br />All in One Place.</span><span class="ball">O</span></div>
-              </div>
+          <article class="portfolio-card" data-project-card data-category="sports" data-search="tanzania soccer hub football platform fixtures match centre news stories">
+            <a class="portfolio-art" href="https://tanzania-football-hub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Tanzania Soccer Hub live website">
+              <img class="portfolio-image" src="assets/project-tanzania.png" alt="Tanzania Soccer Hub live website preview" loading="lazy" />
             </a>
             <div class="portfolio-info">
-              <div class="portfolio-title"><div class="portfolio-icon icon-soccer">&#9673;</div><div><h2>Tanzania Soccer Hub</h2><p>Football Platform</p></div></div>
-              <p>A football platform bringing fixtures, results, news, and club profiles together.</p>
+              <div class="portfolio-title">
+                <div class="portfolio-icon" aria-hidden="true">&#9673;</div>
+                <div><h2>Tanzania Soccer Hub</h2><p>Football platform</p></div>
+              </div>
+              <p>A football information platform for Tanzania, bringing match-day updates, competitions, teams, and stories into one focused experience.</p>
               <div class="project-tags"><span>Fixtures</span><span>Match Centre</span><span>News</span></div>
             </div>
-            <div class="portfolio-actions"><a href="https://tanzania-football-hub.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a><a href="football.html">Football preview <span aria-hidden="true">&#8599;</span></a><a class="view-project" href="projects/case-study.html?project=tanzania-soccer-hub">View Project <span aria-hidden="true">&#8594;</span></a></div>
+            <div class="portfolio-actions">
+              <a class="live-project" href="https://tanzania-football-hub.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a>
+              <a href="projects/tanzania-soccer-hub.html">Football preview <span aria-hidden="true">&#8599;</span></a>
+              <a class="view-project" href="projects/case-study.html?project=tanzania-soccer-hub">View Project <span aria-hidden="true">&#8594;</span></a>
+            </div>
           </article>
 
-          <article class="portfolio-card" data-project-card data-category="real-estate" data-search="ubannest property real estate marketplace home listings rent buy">
-            <a class="portfolio-art" href="https://urban-nest-topaz.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open UrbanNest live project">
-              <img class="portfolio-image" src="assets/project-ubannest.png" alt="UrbanNest live website preview" />
-              <div class="art-browser">
-                <div class="art-top property-top"><span class="art-logo"><span class="aqua-dot"></span><b>UrbanNest</b></span><span>Buy &nbsp; Rent &nbsp; New Developments &nbsp; Agents</span><b class="sign-in">Sign in</b></div>
-                <div class="art-photo art-home"><span class="art-photo-copy">Find Your<br />Next Home<br />in Tanzania.</span><div class="search-bar">Search by location, property type or keywords... <b>O</b></div></div>
-              </div>
+          <article class="portfolio-card" data-project-card data-category="property" data-search="urbannest property marketplace dar es salaam property search listings user portals">
+            <a class="portfolio-art" href="https://urban-nest-topaz.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open UrbanNest live website">
+              <img class="portfolio-image" src="assets/project-ubannest.png" alt="UrbanNest live website preview" loading="lazy" />
             </a>
             <div class="portfolio-info">
-              <div class="portfolio-title"><div class="portfolio-icon icon-property">&#8962;</div><div><h2>UrbanNest</h2><p>Property Marketplace</p></div></div>
-              <p>A property discovery platform connecting seekers with homes and property partners.</p>
+              <div class="portfolio-title">
+                <div class="portfolio-icon" aria-hidden="true">&#8962;</div>
+                <div><h2>UrbanNest</h2><p>Property marketplace</p></div>
+              </div>
+              <p>A property marketplace for Dar es Salaam, Tanzania, bringing property search, detailed listings, and enquiries into one clear experience.</p>
               <div class="project-tags"><span>Property Search</span><span>Listings</span><span>User Portals</span></div>
             </div>
-            <div class="portfolio-actions"><a href="https://urban-nest-topaz.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a><a class="view-project" href="projects/case-study.html?project=ubannest">View Project <span aria-hidden="true">&#8594;</span></a></div>
+            <div class="portfolio-actions">
+              <a class="live-project" href="https://urban-nest-topaz.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a>
+              <a class="view-project" href="projects/case-study.html?project=ubannest">View Project <span aria-hidden="true">&#8594;</span></a>
+            </div>
           </article>
 
-          <article class="portfolio-card" data-project-card data-category="legal-tech" data-search="slcms legal management system matters documents clients research">
-            <a class="portfolio-art" href="https://smart-legal-case-management-system-gules.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open SLCMS live project">
-              <img class="portfolio-image" src="assets/project-slcms.png" alt="SLCMS live website preview" />
-              <div class="art-browser system-browser">
-                <div class="art-top system-top"><span class="art-logo"><span class="mini-mark">O</span><b>SLCMS</b></span><span class="system-search">Search matters, clients... &nbsp; O</span></div>
-                <div class="system-preview"><div class="preview-nav"><b>Dashboard</b><span>Matters</span><span>Clients</span><span>Documents</span><span>Calendar</span><span>Tasks</span></div><div class="preview-content"><small>Welcome back</small><strong>Manage your legal matters efficiently.</strong><div class="metric-row"><span><b>24</b><small>Active matters</small></span><span><b>12</b><small>Upcoming deadlines</small></span><span><b>8</b><small>Clients</small></span></div><div class="table-preview"><i></i><i></i><i></i><i></i></div></div></div>
-              </div>
+          <article class="portfolio-card" data-project-card data-category="legal" data-search="slcms legal management system case management documents legal research">
+            <a class="portfolio-art" href="https://smart-legal-case-management-system-gules.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open SLCMS live website">
+              <img class="portfolio-image" src="assets/project-slcms.png" alt="SLCMS live website preview" loading="lazy" />
             </a>
             <div class="portfolio-info">
-              <div class="portfolio-title"><div class="portfolio-icon icon-system">&#9633;</div><div><h2>SLCMS</h2><p>Legal Management System</p></div></div>
-              <p>A workspace for managing legal matters, documents, clients, and research.</p>
+              <div class="portfolio-title">
+                <div class="portfolio-icon" aria-hidden="true">&#9633;</div>
+                <div><h2>SLCMS</h2><p>Legal management system</p></div>
+              </div>
+              <p>A legal case management interface for keeping matters, clients, documents, and deadlines connected in one workspace.</p>
               <div class="project-tags"><span>Case Management</span><span>Documents</span><span>Legal Research</span></div>
             </div>
-            <div class="portfolio-actions"><a href="https://smart-legal-case-management-system-gules.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a><a class="view-project" href="projects/case-study.html?project=slcms">View Project <span aria-hidden="true">&#8594;</span></a></div>
+            <div class="portfolio-actions">
+              <a class="live-project" href="https://smart-legal-case-management-system-gules.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a>
+              <a class="view-project" href="projects/case-study.html?project=slcms">View Project <span aria-hidden="true">&#8594;</span></a>
+            </div>
           </article>
 
-          <article class="portfolio-card" data-project-card data-category="education" data-search="sacred heart secondary school school website education admissions academics students">
-            <a class="portfolio-art" href="https://school-website-tau-umber.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Sacred Heart Secondary School live project">
-              <img class="portfolio-image" src="assets/project-school.png" alt="Sacred Heart Secondary School live website preview" />
-              <div class="art-browser school-browser">
-                <div class="art-top school-top"><span class="art-logo"><span class="school-cross">✚</span><b>Sacred Heart</b><small>Secondary School</small></span><span>Home &nbsp; Academics &nbsp; Admissions &nbsp; Contact</span><b class="school-switch">SW</b></div>
-                <div class="school-preview"><div class="school-badge">SH<span>SS</span></div><span class="school-kicker">SACRED HEART SECONDARY SCHOOL</span><strong>Excellence.</strong><b>Defined by Tradition.</b><span class="school-cta">Apply for 2026 &nbsp; ›</span></div>
-              </div>
+          <article class="portfolio-card" data-project-card data-category="education" data-search="sacred heart secondary school school website academics admissions student life">
+            <a class="portfolio-art" href="https://school-website-tau-umber.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Sacred Heart Secondary School live website">
+              <img class="portfolio-image" src="assets/project-school.png" alt="Sacred Heart Secondary School live website preview" loading="lazy" />
             </a>
             <div class="portfolio-info">
-              <div class="portfolio-title"><div class="portfolio-icon icon-education">✦</div><div><h2>Sacred Heart Secondary School</h2><p>School Website</p></div></div>
+              <div class="portfolio-title">
+                <div class="portfolio-icon" aria-hidden="true">&#10022;</div>
+                <div><h2>Sacred Heart Secondary School</h2><p>School website</p></div>
+              </div>
               <p>A welcoming school website that brings academics, admissions, student life, and community into one clear experience.</p>
               <div class="project-tags"><span>Academics</span><span>Admissions</span><span>Student Life</span></div>
             </div>
-            <div class="portfolio-actions"><a href="https://school-website-tau-umber.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a><a class="view-project" href="projects/case-study.html?project=sacred-heart-secondary-school">View Project <span aria-hidden="true">&#8594;</span></a></div>
+            <div class="portfolio-actions">
+              <a class="live-project" href="https://school-website-tau-umber.vercel.app/" target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">&#8599;</span></a>
+              <a class="view-project" href="projects/case-study.html?project=sacred-heart-secondary-school">View Project <span aria-hidden="true">&#8594;</span></a>
+            </div>
           </article>
         </section>
 
         <p class="projects-empty" data-project-empty hidden>No projects match that search yet.</p>
 
-        <section class="contact-band projects-cta">
-          <div class="contact-copy"><p class="eyebrow">Let's create together</p><h2>Your next idea could be <span>here.</span></h2><p>Let's discuss what you want to build.</p></div>
+        <section class="contact-band projects-cta" aria-labelledby="projects-cta-title">
+          <div class="contact-copy">
+            <p class="eyebrow">Let's create together</p>
+            <h2 id="projects-cta-title">Your next idea could be here<span>.</span></h2>
+            <p>Let's discuss what you want to build.</p>
+          </div>
           <a class="button button-aqua" href="contact.html">Start a conversation <span aria-hidden="true">&#8594;</span></a>
         </section>
       </main>
 
-      <footer class="site-footer"><a class="brand" href="index.html" aria-label="Kai10 home"><img src="assets/logo-header.png" alt="Kai10" width="54" height="54" /><span>Kai10</span></a><nav aria-label="Footer navigation"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><span class="footer-meta">&copy; <span data-year></span> Kai10</span></footer>
+      <footer class="site-footer">
+        <a class="brand" href="index.html" aria-label="Kai10 home">
+          <img src="assets/logo-header.png" alt="Kai10" width="54" height="54" />
+          <span>Kai10</span>
+        </a>
+        <nav aria-label="Footer navigation">
+          <a href="projects.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer-meta">&copy; <span data-year></span> Kai10</span>
+      </footer>
     </div>
     <script src="assets/app.js" defer></script>
   </body>
